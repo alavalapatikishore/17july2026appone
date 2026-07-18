@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DentalCare HMS — Patient Registration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="app">
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="tooth-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#0B2545" stroke-width="2"><path d="M12 2c-2.5 0-4 1.5-6 1.5C4 3.5 3 5 3 7.5c0 3 1 4 1.5 8 .3 2.5 1 6 2.5 6 1.8 0 1.5-4 2.5-4s.7 4 2.5 4c1.5 0 2.2-3.5 2.5-6 .5-4 1.5-5 1.5-8 0-2.5-1-4-3-4-2 0-3.5-1.5-6-1.5"/></svg></div>
+      <div class="brand-name">DentalCare<span>Hospital Management System</span></div>
+    </div>
+
+    <div class="nav-group-label">Main</div>
+    <a class="nav-item" href="../index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+      Dashboard
+    </a>
+    <a class="nav-item" href="appointments.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+      Appointments
+    </a>
+    <a class="nav-item active" href="patient-registration.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M17 8h4M19 6v4"/></svg>
+      Patient Registration
+    </a>
+    <a class="nav-item" href="odontogram.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c-2.5 0-4 1.5-6 1.5C4 3.5 3 5 3 7.5c0 3 1 4 1.5 8 .3 2.5 1 6 2.5 6 1.8 0 1.5-4 2.5-4s.7 4 2.5 4c1.5 0 2.2-3.5 2.5-6 .5-4 1.5-5 1.5-8 0-2.5-1-4-3-4-2 0-3.5-1.5-6-1.5"/></svg>
+      Odontogram
+    </a>
+
+    <div class="nav-group-label">Clinical</div>
+    <a class="nav-item" href="#" data-soon="Radiology"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Radiology</a>
+    <a class="nav-item" href="#" data-soon="OPD Management"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>OPD Management</a>
+
+    <div class="nav-group-label">Operations</div>
+    <a class="nav-item" href="#" data-soon="Billing"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6M7 17h4"/></svg>Billing</a>
+    <a class="nav-item" href="#" data-soon="Reports"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M11 20V4M18 20v-7"/></svg>Reports & MIS</a>
+
+    <div class="sidebar-footer">© 2026 DentalCare HMS — v1.0</div>
+  </aside>
+
+  <div class="main-col">
+    <header class="topbar">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      <button class="new-btn" data-soon="Quick create"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg><span>New</span></button>
+      <div class="search-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input type="text" placeholder="Search patients..."></div>
+      <div class="topbar-right">
+        <button class="icon-btn" data-soon="Messages"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span class="badge">2</span></button>
+        <button class="icon-btn" data-soon="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg><span class="badge">5</span></button>
+        <div class="profile-chip" data-soon="Profile menu"><div class="avatar">DS</div><div class="who"><b>Dr. Sarah Kim</b><span>Chief Dentist</span></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="page-head">
+        <div>
+          <h1>Patient Registration</h1>
+          <p>Add a new patient record to the clinic system.</p>
+        </div>
+        <div class="breadcrumb"><a href="../index.html"><b>Home</b></a> / Patient Registration</div>
+      </div>
+
+      <div class="two-col">
+        <form class="panel" id="regForm">
+          <h3 style="font-size:14px; color:var(--navy); margin-bottom:16px;">Personal Details</h3>
+          <div class="form-grid">
+            <div class="field"><label>Full Name</label><input type="text" placeholder="e.g. Ravi Kumar" required></div>
+            <div class="field"><label>Date of Birth</label><input type="date" required></div>
+            <div class="field"><label>Gender</label><select><option>Male</option><option>Female</option><option>Other</option></select></div>
+            <div class="field"><label>Phone Number</label><input type="tel" placeholder="+91 98765 43210" required></div>
+            <div class="field"><label>Email</label><input type="email" placeholder="patient@email.com"></div>
+            <div class="field"><label>Blood Group</label><select><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>O+</option><option>O-</option><option>AB+</option><option>AB-</option></select></div>
+            <div class="field full"><label>Address</label><input type="text" placeholder="Street, City, State, PIN"></div>
+            <div class="field"><label>Referring Doctor</label><select><option>Dr. Sarah Kim</option><option>Dr. Aman Rao</option><option>Dr. Priya Nair</option><option>Walk-in</option></select></div>
+            <div class="field"><label>Preferred Chair</label><select><option>Chair 1</option><option>Chair 2</option><option>Chair 3</option><option>Chair 4</option></select></div>
+            <div class="field full"><label>Known Allergies / Medical Conditions</label><textarea rows="3" placeholder="e.g. Penicillin allergy, diabetes..."></textarea></div>
+          </div>
+          <div style="display:flex; gap:10px; margin-top:20px;">
+            <button type="submit" class="btn-primary">Register Patient</button>
+            <button type="reset" class="btn-secondary">Clear Form</button>
+          </div>
+        </form>
+
+        <div class="panel">
+          <h3 style="font-size:14px; color:var(--navy); margin-bottom:14px;">Recently Registered</h3>
+          <table class="data-table">
+            <tbody>
+              <tr><td><b>Ravi Kumar</b><br><span style="color:var(--ink-soft); font-size:11.5px;">ID: PT-2026-0451</span></td><td style="text-align:right; color:var(--ink-soft); font-size:12px;">Today</td></tr>
+              <tr><td><b>Anita Desai</b><br><span style="color:var(--ink-soft); font-size:11.5px;">ID: PT-2026-0450</span></td><td style="text-align:right; color:var(--ink-soft); font-size:12px;">Today</td></tr>
+              <tr><td><b>Vikram Singh</b><br><span style="color:var(--ink-soft); font-size:11.5px;">ID: PT-2026-0449</span></td><td style="text-align:right; color:var(--ink-soft); font-size:12px;">Yesterday</td></tr>
+              <tr><td><b>Meera Iyer</b><br><span style="color:var(--ink-soft); font-size:11.5px;">ID: PT-2026-0448</span></td><td style="text-align:right; color:var(--ink-soft); font-size:12px;">Yesterday</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../js/app.js"></script>
+<script>
+document.getElementById('regForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  showToast('Patient registered successfully');
+  this.reset();
+});
+</script>
+</body>
+</html>

@@ -1,22 +1,20 @@
-name: Build and Push Docker Image
+name: Build, Push and Deploy
 
 on:
   push:
     branches:
       - master
 
-permissions:
-  contents: read
-
 env:
   IMAGE_NAME: saikishorea/18july2026one
+  CONTAINER_NAME: Dental-medicover
 
 jobs:
-  docker:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout Source
         uses: actions/checkout@v4
 
       - name: Set up Docker Buildx
@@ -35,11 +33,41 @@ jobs:
             -t $IMAGE_NAME:${{ github.sha }} \
             .
 
-      - name: Push Latest Image
-        run: docker push $IMAGE_NAME:latest
+      - name: Push Docker Images
+        run: |
+          docker push $IMAGE_NAME:latest
+          docker push $IMAGE_NAME:${{ github.sha }}
 
-      - name: Push Commit SHA Image
-        run: docker push $IMAGE_NAME:${{ github.sha }}
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            set -e
 
-      - name: Verify Images
-        run: docker images
+            IMAGE="saikishorea/18july2026one:latest"
+            CONTAINER="Dental-medicover"
+
+            echo "Pulling latest image..."
+            docker pull $IMAGE
+
+            echo "Stopping old container..."
+            docker stop $CONTAINER || true
+
+            echo "Removing old container..."
+            docker rm $CONTAINER || true
+
+            echo "Starting new container..."
+            docker run -d \
+              --name $CONTAINER \
+              --restart unless-stopped \
+              -p 8082:80 \
+              $IMAGE
+
+            echo "Cleaning unused images..."
+            docker image prune -af
+
+            echo "Running Containers:"
+            docker ps

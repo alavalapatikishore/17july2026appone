@@ -1,4 +1,4 @@
-name: Build, Push and Deploy
+name: Build, Push and Deploy to Kubernetes
 
 on:
   push:
@@ -7,18 +7,16 @@ on:
 
 env:
   IMAGE_NAME: saikishorea/18july2026one
-  CONTAINER_NAME: Dental-medicover
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+
+    runs-on: self-hosted
 
     steps:
-      - name: Checkout Source
-        uses: actions/checkout@v4
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
       - name: Login to Docker Hub
         uses: docker/login-action@v3
@@ -29,45 +27,25 @@ jobs:
       - name: Build Docker Image
         run: |
           docker build \
-            -t $IMAGE_NAME:latest \
-            -t $IMAGE_NAME:${{ github.sha }} \
-            .
+          -t $IMAGE_NAME:latest \
+          -t $IMAGE_NAME:${{ github.sha }} .
 
-      - name: Push Docker images to DOCKER HUB
+      - name: Push Docker Images
         run: |
           docker push $IMAGE_NAME:latest
           docker push $IMAGE_NAME:${{ github.sha }}
 
-      - name: Deploy to EC2 server in aws
-        uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          script: |
-            set -e
+      - name: Deploy to Kubernetes
+        run: |
+          kubectl apply -f k8s/
 
-            IMAGE="saikishorea/18july2026one:latest"
-            CONTAINER="Dental-medicover"
+      - name: Wait for Rollout
+        run: |
+          kubectl rollout status deployment/dental-app -n dental
 
-            echo "Pulling latest image..."
-            docker pull $IMAGE
-
-            echo "Stopping old container..."
-            docker stop $CONTAINER || true
-
-            echo "Removing old container..."
-            docker rm $CONTAINER || true
-
-            echo "Starting new container..."
-            docker run -d \
-              --name $CONTAINER \
-              --restart unless-stopped \
-              -p 8082:80 \
-              $IMAGE
-
-            echo "Cleaning unused images..."
-            docker image prune -af
-
-            echo "Running Containers:"
-            docker ps
+      - name: Verify Deployment
+        run: |
+          kubectl get nodes
+          kubectl get pods -n dental
+          kubectl get svc -n dental
+          kubectl get deployment -n dental

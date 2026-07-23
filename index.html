@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DentalCare HMS — Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="app">
+
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="tooth-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#0B2545" stroke-width="2"><path d="M12 2c-2.5 0-4 1.5-6 1.5C4 3.5 3 5 3 7.5c0 3 1 4 1.5 8 .3 2.5 1 6 2.5 6 1.8 0 1.5-4 2.5-4s.7 4 2.5 4c1.5 0 2.2-3.5 2.5-6 .5-4 1.5-5 1.5-8 0-2.5-1-4-3-4-2 0-3.5-1.5-6-1.5"/></svg>
+      </div>
+      <div class="brand-name">DentalCare<span>Hospital Management System</span></div>
+    </div>
+
+    <div class="nav-group-label">Main</div>
+    <a class="nav-item active" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+      Dashboard
+    </a>
+    <a class="nav-item" href="pages/appointments.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+      Appointments
+    </a>
+    <a class="nav-item" href="pages/patient-registration.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M17 8h4M19 6v4"/></svg>
+      Patient Registration
+    </a>
+    <a class="nav-item" href="pages/odontogram.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c-2.5 0-4 1.5-6 1.5C4 3.5 3 5 3 7.5c0 3 1 4 1.5 8 .3 2.5 1 6 2.5 6 1.8 0 1.5-4 2.5-4s.7 4 2.5 4c1.5 0 2.2-3.5 2.5-6 .5-4 1.5-5 1.5-8 0-2.5-1-4-3-4-2 0-3.5-1.5-6-1.5"/></svg>
+      Odontogram
+    </a>
+
+    <div class="nav-group-label">Clinical</div>
+    <div class="nav-item has-sub">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 2v4M15 2v4M4 8h16M5 8v11a2 2 0 002 2h10a2 2 0 002-2V8"/></svg>
+      Treatment Plans
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M9 5l7 7-7 7"/></svg>
+    </div>
+    <div class="sub-nav">
+      <a class="nav-item" href="#" data-soon="Root Canal Plans">Root Canal</a>
+      <a class="nav-item" href="#" data-soon="Orthodontics">Orthodontics</a>
+      <a class="nav-item" href="#" data-soon="Implants">Implants</a>
+    </div>
+    <a class="nav-item" href="#" data-soon="Radiology (X-Ray)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      Radiology
+    </a>
+    <a class="nav-item" href="#" data-soon="OPD Management">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>
+      OPD Management
+    </a>
+    <a class="nav-item" href="#" data-soon="Dental Surgery / OT">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6M12 22v-6M2 12h6M22 12h-6M5 5l4 4M19 5l-4 4M5 19l4-4M19 19l-4-4"/></svg>
+      Dental Surgery
+    </a>
+    <a class="nav-item" href="#" data-soon="Dental Lab Orders">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 2v5.5L4 18a2 2 0 001.8 3h12.4a2 2 0 001.8-3L15 7.5V2M9 2h6"/></svg>
+      Dental Lab Orders
+    </a>
+
+    <div class="nav-group-label">Operations</div>
+    <a class="nav-item" href="#" data-soon="Billing & Invoicing">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6M7 17h4"/></svg>
+      Billing
+    </a>
+    <a class="nav-item" href="#" data-soon="Pharmacy">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M12 8v8M8 12h8"/></svg>
+      Pharmacy
+    </a>
+    <a class="nav-item" href="#" data-soon="Inventory / Store">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l9-4 9 4-9 4-9-4zM3 7v10l9 4 9-4V7"/></svg>
+      Inventory
+    </a>
+    <a class="nav-item" href="#" data-soon="Staff / HR Management">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 21c0-3.5 3-6 7-6s7 2.5 7 6M16 21c0-2.5 1.7-4.5 6-4.5"/></svg>
+      HR Management
+    </a>
+    <a class="nav-item" href="#" data-soon="Insurance Claims">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 3.5v5c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11v-5L12 2z"/></svg>
+      Insurance Claims
+    </a>
+    <a class="nav-item" href="#" data-soon="Reports & MIS">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M11 20V4M18 20v-7"/></svg>
+      Reports & MIS
+    </a>
+    <a class="nav-item" href="#" data-soon="Settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.9-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1-1.6 1.7 1.7 0 00-1.9.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.9 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1 1.7 1.7 0 00-.3-1.9l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.9.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.9-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.9V9c.4.3.9.5 1.5.5H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg>
+      Settings
+    </a>
+
+    <div class="sidebar-footer">© 2026 DentalCare HMS — v2.0</div>
+  </aside>
+
+  <div class="main-col">
+    <!-- ============ TOPBAR ============ -->
+    <header class="topbar">
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <button class="new-btn" data-soon="Quick create">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+        <span>New</span>
+      </button>
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" placeholder="Search patients, appointments...">
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn" data-soon="Messages"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span class="badge">2</span></button>
+        <button class="icon-btn" data-soon="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg><span class="badge">5</span></button>
+        <button class="icon-btn" data-soon="Alerts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9L2.8 17a2 2 0 001.7 3h15a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg><span class="badge">3</span></button>
+        <div class="profile-chip" data-soon="Profile menu">
+          <div class="avatar">DS</div>
+          <div class="who"><b>Dr. Sarah Kim</b><span>Chief Dentist</span></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ CONTENT ============ -->
+    <main class="content">
+      <div class="page-head">
+        <div>
+          <h1>Dashboard</h1>
+          <p>Welcome back, Dr. Sarah Kim — here's what's happening at the clinic today on 23-07-2026.</p>
+        </div>
+        <div class="breadcrumb"><b>Home</b> / Dashboard</div>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-icon teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
+          <div class="stat-info"><div class="num">28</div><div class="lbl">Today's Appointments</div><div class="delta up">▲ 12% vs yesterday</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><path d="M17 8h4M19 6v4"/></svg></div>
+          <div class="stat-info"><div class="num">6</div><div class="lbl">New Patients</div><div class="delta up">▲ 3 walk-ins</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6M7 17h4"/></svg></div>
+          <div class="stat-info"><div class="num">₹42,500</div><div class="lbl">Pending Bills</div><div class="delta down">▼ 4 overdue</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c-2.5 0-4 1.5-6 1.5C4 3.5 3 5 3 7.5c0 3 1 4 1.5 8 .3 2.5 1 6 2.5 6 1.8 0 1.5-4 2.5-4s.7 4 2.5 4c1.5 0 2.2-3.5 2.5-6 .5-4 1.5-5 1.5-8 0-2.5-1-4-3-4-2 0-3.5-1.5-6-1.5"/></svg></div>
+          <div class="stat-info"><div class="num">14</div><div class="lbl">Procedures Today</div><div class="delta up">▲ 2 surgeries</div></div>
+        </div>
+      </div>
+
+      <!-- Module grid -->
+      <div class="section-title">All Modules</div>
+      <div class="module-grid">
+
+        <a class="module-card" href="pages/appointments.html">
+          <div class="module-icon mi-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
+          <span>Appointment</span>
+        </a>
+        <a class="module-card" href="pages/patient-registration.html">
+          <div class="module-icon mi-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6M17 8h4M19 6v4"/></svg></div>
+          <span>Patient Registration</span>
+        </a>
+        <a class="module-card" href="#" data-soon="OPD Management">
+          <div class="module-icon mi-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg></div>
+          <span>OPD Management</span>
+        </a>
+        <a class="module-card" href="pages/odontogram.html">
+          <div class="module-icon mi-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c-2.5 0-4 1.5-6 1.5C4 3.5 3 5 3 7.5c0 3 1 4 1.5 8 .3 2.5 1 6 2.5 6 1.8 0 1.5-4 2.5-4s.7 4 2.5 4c1.5 0 2.2-3.5 2.5-6 .5-4 1.5-5 1.5-8 0-2.5-1-4-3-4-2 0-3.5-1.5-6-1.5"/></svg></div>
+          <span>Odontogram<div class="badge-new">NEW</div></span>
+        </a>
+        <a class="module-card" href="#" data-soon="Dental Checkup">
+          <div class="module-icon mi-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 12.5l4 4L20 6"/></svg></div>
+          <span>Dental Checkup</span>
+        </a>
+        <a class="module-card" href="#" data-soon="Radiology">
+          <div class="module-icon mi-6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <span>Radiology</span>
+        </a>
+        <a class="module-card" href="#" data-soon="Billing & Invoicing">
+          <div class="module-icon mi-7"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6M7 17h4"/></svg></div>
+          <span>Billing</span>
+        </a>
+
+        <a class="module-card" href="#" data-soon="Dental Surgery / OT">
+          <div class="module-icon mi-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6M12 22v-6M2 12h6M22 12h-6M5 5l4 4M19 5l-4 4M5 19l4-4M19 19l-4-4"/></svg></div>
+          <span>Dental Surgery</span>
+        </a>
+        <a class="module-card" href="#" data-soon="Treatment Plan">
+          <div class="module-icon mi-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 2v4M15 2v4M4 8h16M5 8v11a2 2 0 002 2h10a2 2 0 002-2V8"/></svg></div>
+          <span>Treatment Plan</span>
+        </a>
+        <a class="module-card" href="#" data-soon="Review Doctor">
+          <div class="module-icon mi-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.7 6h6.3l-5 4.2 1.9 6.3L12 15l-5.9 3.5 1.9-6.3-5-4.2h6.3z"/></svg></div>
+          <span>Review Doctor</span>
+        </a>
+        <a class="module-card" href="#" data-soon="MIS Reports">
+          <div class="module-icon mi-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M11 20V4M18 20v-7"/></svg></div>
+          <span>MIS Reports</span>
+        </a>
+        <a class="module-card" href="#" data-soon="Pharmacy">
+          <div class="module-icon mi-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M12 8v8M8 12h8"/></svg></div>
+          <span>Pharmacy</span>
+        </a>
+        <a class="module-card" href="#" data-soon="Store / Inventory">
+          <div class="module-icon mi-6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l9-4 9 4-9 4-9-4zM3 7v10l9 4 9-4V7"/></svg></div>
+          <span>Store Management</span>
+        </a>
+        <a class="module-card" href="#" data-soon="Dental Lab Orders">
+          <div class="module-icon mi-7"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 2v5.5L4 18a2 2 0 001.8 3h12.4a2 2 0 001.8-3L15 7.5V2M9 2h6"/></svg></div>
+          <span>Dental Lab</span>
+        </a>
+
+        <a class="module-card" href="#" data-soon="Doctor Accounting">
+          <div class="module-icon mi-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9.5c0-1.4 1.3-2.5 3-2.5s3 1.1 3 2.5-1.3 2-3 2.5-3 1.1-3 2.5 1.3 2.5 3 2.5 3-1.1 3-2.5"/></svg></div>
+          <span>Doctor Accounting</span>
+        </a>
+        <a class="module-card" href="#" data-soon="HR Management">
+          <div class="module-icon mi-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2 21c0-3.5 3-6 7-6s7 2.5 7 6M16 21c0-2.5 1.7-4.5 6-4.5"/></svg></div>
+          <span>HR Management</span>
+        </a>
+        <a class="module-card" href="#" data-soon="Insurance Claims">
+          <div class="module-icon mi-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 3.5v5c0 5-3.4 8.5-8 11-4.6-2.5-8-6-8-11v-5L12 2z"/></svg></div>
+          <span>Insurance Claims</span>
+        </a>
+        <a class="module-card" href="#" data-soon="Recall & Reminders">
+          <div class="module-icon mi-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 01-3.4 0"/></svg></div>
+          <span>Recall & Reminders</span>
+        </a>
+        <a class="module-card" href="#" data-soon="Discharge Summary">
+          <div class="module-icon mi-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg></div>
+          <span>Discharge Summary</span>
+        </a>
+        <a class="module-card" href="#" data-soon="Equipment Maintenance">
+          <div class="module-icon mi-6"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 01-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 015.4-5.4l-3 3-2-2z"/></svg></div>
+          <span>Equipment</span>
+        </a>
+
+        <a class="module-card" href="#" data-soon="Housekeeping & Laundry">
+          <div class="module-icon mi-7"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12a4 4 0 108 0 4 4 0 00-8 0z"/></svg></div>
+          <span>Housekeeping</span>
+        </a>
+        <a class="module-card" href="#" data-soon="Canteen Management">
+          <div class="module-icon mi-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2v20M6 2c0 3-2 3-2 6s2 3 2 3M18 2v20M15 2v7a3 3 0 003 3 3 3 0 003-3V2"/></svg></div>
+          <span>Canteen</span>
+        </a>
+        <a class="module-card" href="#" data-soon="Ambulance / Transport">
+          <div class="module-icon mi-2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="9" width="15" height="9" rx="1.5"/><path d="M16 12h3l3 3v3h-6z"/><circle cx="6" cy="19.5" r="1.5"/><circle cx="17.5" cy="19.5" r="1.5"/><path d="M6 12v-1M9 13h4"/></svg></div>
+          <span>Transport</span>
+        </a>
+        <a class="module-card" href="#" data-soon="Feedback & Reviews">
+          <div class="module-icon mi-3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5 8.4 8.4 0 01-4-1L3 20l1.2-3.5A8.4 8.4 0 013 12.5 8.5 8.5 0 0111.5 4h.5a8.5 8.5 0 019 8z"/></svg></div>
+          <span>Feedback</span>
+        </a>
+        <a class="module-card" href="#" data-soon="Settings">
+          <div class="module-icon mi-4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.9-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1-1.6 1.7 1.7 0 00-1.9.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.9 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1 1.7 1.7 0 00-.3-1.9l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.9.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.9-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.9V9c.4.3.9.5 1.5.5H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg></div>
+          <span>Settings</span>
+        </a>
+        <a class="module-card" href="#" data-soon="System Control">
+          <div class="module-icon mi-5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
+          <span>System Control</span>
+        </a>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+<script src="js/chat-widget.js"></script>
+</body>
+</html>
